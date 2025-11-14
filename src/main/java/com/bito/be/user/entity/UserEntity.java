@@ -42,14 +42,14 @@ public class UserEntity extends BaseEntity {
     private LocalDateTime connectedDt;
 
     public static UserEntity from(User user) {
-        UserEntity userEntity = new UserEntity();
-        userEntity.id = user.getId();
-        userEntity.email = user.getEmail();
-        userEntity.nickName = user.getNickName();
-        userEntity.platform = user.getPlatform();
-        userEntity.providerId = user.getProviderId();
-        userEntity.connectedDt = user.getConnectedDt();
-        return userEntity;
+        return UserEntity.builder()
+                .id(user.getId())
+                .email(user.getEmail())
+                .nickName(user.getNickName())
+                .platform(user.getPlatform())
+                .providerId(user.getProviderId())
+                .connectedDt(user.getConnectedDt())
+                .build();
     }
 
     public User toDomain() {

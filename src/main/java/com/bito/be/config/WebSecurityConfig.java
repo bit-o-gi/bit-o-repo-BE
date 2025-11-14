@@ -67,6 +67,7 @@ public class WebSecurityConfig {
         http.authorizeHttpRequests(authorizeHttpRequests -> authorizeHttpRequests
                 .requestMatchers("/api/v1/auth/token").permitAll()
                 .requestMatchers("/api/v1/auth/fake/token").permitAll()
+                .requestMatchers("/api/v1/inquiries").permitAll()
                 .requestMatchers("/api/v1/**").authenticated()
                 .anyRequest().permitAll());
 
