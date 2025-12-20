@@ -24,6 +24,9 @@ repositories {
 }
 
 dependencies {
+    // Environment Variables
+    implementation 'io.github.cdimascio:dotenv-java:3.0.0'
+
     // Spring Security
     implementation 'org.springframework.boot:spring-boot-starter-security'
     testImplementation 'org.springframework.security:spring-security-test'
@@ -42,6 +45,7 @@ dependencies {
 
     // Database
     runtimeOnly 'com.mysql:mysql-connector-j'
+    runtimeOnly 'org.postgresql:postgresql'
     testRuntimeOnly 'com.h2database:h2'
 
     // Lombok
